@@ -35,7 +35,7 @@
       "imgSrc": "./images/weirdannoyingguy.png",
       "description": "New single from my upcoming album",
       "links": [
-        { "name": "Spotify", "url": "https://open.spotify.com/album/4Q31gOdJvNRlrpVSoWBEiM?si=oeOYopCXT7yoRaC2bCV9bg", "icon": "faSpotify" },
+        { "name": "Spotify", "url": "https://open.spotify.com/track/4LncxMZ5uDQErPSe6qnAzq", "icon": "faSpotify" },
         { "name": "Apple Music", "url": "https://music.apple.com/us/album/weird-annoying-guy-single/1698719831", "icon": "faApple" }
       ]
     },
