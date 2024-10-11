@@ -1,0 +1,51 @@
+{
+  "artist": {
+    "name": "CHUCK SAVAGE",
+    "bio": "I make music in my closet sometimes in Atlanta, Georgia",
+    "profilePic": "./images/profile.png"
+  },
+  "socialLinks": [
+    {
+      "url": "https://www.instagram.com/csavagejamz/?hl=en",
+      "icon": "faInstagram"
+    },
+    {
+      "url": "https://www.facebook.com/chucksavage00/",
+      "icon": "faFacebook"
+    },
+    {
+      "url": "https://www.youtube.com/@chucksavage00",
+      "icon": "faYoutube"
+    },
+    {
+      "url": "https://music.apple.com/us/artist/chuck-savage/1554962919",
+      "icon": "faApple"
+    },
+    {
+      "url": "https://open.spotify.com/artist/1RiM4nQULgXpc73vrayzDa?si=F6OPetEHToiRu2omuZujZg",
+      "icon": "faSpotify"
+    }
+  ],
+  "content": [
+    {
+      "imgSrc": "./images/cinema.png",
+      "description": "New album coming soon!"
+    },
+    {
+      "imgSrc": "./images/brainr0t.png",
+      "description": "4 song EP released in 2022",
+      "links": [
+        { "name": "Spotify", "url": "https://open.spotify.com/album/5LC4ozVBPmXfP2P3lQf086?si=NOP5ieDqTO2_nN8HtHL9aw", "icon": "faSpotify" },
+        { "name": "Apple Music", "url": "https://music.apple.com/us/album/brainr0t-ep/1645623112", "icon": "faApple" }
+      ]
+    },
+    {
+      "imgSrc": "./images/braindead.png",
+      "description": "4 song EP released in 2021",
+      "links": [
+        { "name": "Spotify", "url": "https://open.spotify.com/album/77glLLXPtOgctI279vFlzC?si=t7PSEsYbS3e1RGWvYTesHQ", "icon": "faSpotify" },
+        { "name": "Apple Music", "url": "https://music.apple.com/us/album/braindead-ep/1554969599", "icon": "faApple" }
+      ]
+    }
+  ]
+}
