@@ -32,6 +32,14 @@
       "description": "New album coming soon!"
     },
     {
+      "imgSrc": "./images/weirdannoyingguy.png",
+      "description": "New single from my upcoming album",
+      "links": [
+        { "name": "Spotify", "url": "https://open.spotify.com/album/4Q31gOdJvNRlrpVSoWBEiM?si=oeOYopCXT7yoRaC2bCV9bg", "icon": "faSpotify" },
+        { "name": "Apple Music", "url": "https://music.apple.com/us/album/weird-annoying-guy-single/1698719831", "icon": "faApple" }
+      ]
+    },
+    {
       "imgSrc": "./images/brainr0t.png",
       "description": "4 song EP released in 2022",
       "links": [
