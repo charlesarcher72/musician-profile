@@ -24,6 +24,14 @@ h1 {
   box-sizing: border-box;
 }
 
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
 .profile-section {
   margin-bottom: 40px;
 }

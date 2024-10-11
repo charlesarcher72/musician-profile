@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSpotify, faApple, faDeezer, faInstagram, faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faSpotify, faApple, faDeezer, faInstagram, faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons'; // Added faSpinner
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+
 import './App.css';
 
 function App() {
@@ -54,7 +56,11 @@ function App() {
   };
 
   if (contentList.length === 0) {
-    return <div>Loading...</div>;
+    return (
+      <div className="loading-container">
+        <FontAwesomeIcon icon={faSpinner} className="loading-icon" spin />
+      </div>
+    );
   }
 
   const currentContent = contentList[currentIndex];
