@@ -299,12 +299,12 @@ h1 {
 
 @keyframes fadeIn {
   from {
-    opacity: 0; /* Start fully transparent */
-    transform: translateY(-20px); /* Optional: Add a slight upward movement */
+    opacity: 0;
+    transform: translateY(-20px);
   }
   to {
-    opacity: 1; /* End fully visible */
-    transform: translateY(0); /* Return to original position */
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -362,5 +362,15 @@ h1 {
 
   .popup-content:after {
     left: calc(50% + 80px);
+  }
+
+  .fade-out {
+    position: absolute;
+    top: 68vh;
+    left: 0;
+    width: 100%;
+    height: 20vh;
+    background: linear-gradient(to bottom, transparent, black);
+    z-index: 3000;
   }
 }
