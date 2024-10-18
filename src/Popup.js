@@ -20,7 +20,6 @@ const Popup = ({ visible, onClose }) => {
             <p>The creature stepped toward me, laughing diabolically as it sank its teeth into my lifeless body. As my vision began to blur, I smiled. I whispered to myself, with my last waking breath, “The Cinema is a Place for People from All Walks of Life.”</p>
         </div>
       </div>
-      <div className="fade-out"></div>
     </div>
   );
 };
