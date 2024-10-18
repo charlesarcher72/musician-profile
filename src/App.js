@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSpotify, faApple, faDeezer, faInstagram, faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons'; // Added faSpinner
+import { faSpotify, faApple, faDeezer, faInstagram, faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import Popup from './Popup';
 
 import './App.css';
 
@@ -11,6 +12,7 @@ function App() {
   const [contentList, setContentList] = useState([]);
   const [artist, setArtist] = useState({});
   const [socialLinks, setSocialLinks] = useState([]);
+  const [popupVisible, setPopupVisible] = useState(false);
 
   useEffect(() => {
     fetch('/content.json')
@@ -85,7 +87,14 @@ function App() {
           <div className="content-section">
             <button onClick={prevContent} className="button">❮</button>
             <div className="content">
-              <img src={currentContent.imgSrc} alt="Album Art" className="album-art" />
+              {currentIndex === 0 && (
+                <button className="hidden-button" onClick={() => setPopupVisible(true)}>
+                  <img src={currentContent.imgSrc} alt="Album Art" className="album-art" />
+                </button>
+              )}
+              {currentIndex !== 0 && (
+                <img src={currentContent.imgSrc} alt="Album Art" className="album-art" />
+              )}
               <p>{currentContent.description}</p>
               <div className="icon-container">
                 {currentContent.links && currentContent.links.length > 0 ? (
@@ -109,6 +118,7 @@ function App() {
             <button onClick={nextContent} className="button">❯</button>
           </div>
         </section>
+        <Popup visible={popupVisible} onClose={() => setPopupVisible(false)} />
       </div>
     </Router>
   );
