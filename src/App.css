@@ -280,10 +280,10 @@ h1 {
 .fade-out {
   position: sticky;
   top: 0;
-  bottom: 25%;
+  bottom: 22vh;
   left: 0;
   width: 100%;
-  height: 100px;
+  height: 10vh;
   background: linear-gradient(to bottom, transparent, black);
   z-index: 3000;
 }
@@ -310,7 +310,7 @@ h1 {
 
 .popup-content p {
   text-align: justify;
-  margin: 10px 0;
+  margin: 10px;
 }
 
 .close-popup {
