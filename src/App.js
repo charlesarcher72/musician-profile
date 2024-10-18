@@ -87,14 +87,10 @@ function App() {
           <div className="content-section">
             <button onClick={prevContent} className="button">❮</button>
             <div className="content">
-              {currentIndex === 0 && (
-                <button className="hidden-button" onClick={() => setPopupVisible(true)}>
-                  <img src={currentContent.imgSrc} alt="Album Art" className="album-art" />
-                </button>
-              )}
-              {currentIndex !== 0 && (
+              {/* Render the album art image as a button for the first album */}
+              <button onClick={currentIndex === 0 ? () => setPopupVisible(true) : null} className="hidden-button ">
                 <img src={currentContent.imgSrc} alt="Album Art" className="album-art" />
-              )}
+              </button>
               <p>{currentContent.description}</p>
               <div className="icon-container">
                 {currentContent.links && currentContent.links.length > 0 ? (

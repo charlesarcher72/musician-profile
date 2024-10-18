@@ -180,7 +180,6 @@ h1 {
 
 .popup-overlay {
   min-width: 320px;
-
   position: fixed;
   flex-direction: column;
   align-items: center;
