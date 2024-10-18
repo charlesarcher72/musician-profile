@@ -277,16 +277,6 @@ h1 {
   scrollbar-color: #ff0000 rgba(255, 0, 0, 0.1);
 }
 
-.fade-out {
-  position: sticky;
-  top: 0;
-  bottom: 22vh;
-  left: 0;
-  width: 100%;
-  height: 10vh;
-  background: linear-gradient(to bottom, transparent, black);
-  z-index: 3000;
-}
 
 @keyframes eye-glow {
   0% {
@@ -362,15 +352,5 @@ h1 {
 
   .popup-content:after {
     left: calc(50% + 80px);
-  }
-
-  .fade-out {
-    position: absolute;
-    top: 68vh;
-    left: 0;
-    width: 100%;
-    height: 20vh;
-    background: linear-gradient(to bottom, transparent, black);
-    z-index: 3000;
   }
 }
