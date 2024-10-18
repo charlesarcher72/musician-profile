@@ -29,7 +29,7 @@
   "content": [
     {
       "imgSrc": "./images/cinema.png",
-      "description": "New album coming soon!",
+      "description": "Check out my new album!",
       "links": [
         { "name": "Spotify", "url": "https://open.spotify.com/album/1ASsjcAVFRTWM0miYCr23v?si=wonyyqwwQJirI5xlm2wGDw", "icon": "faSpotify" },
         { "name": "Apple Music", "url": "https://music.apple.com/us/album/the-cinema-is-a-place-for-people-from-all-walks-of-life/1773648331", "icon": "faApple" }
