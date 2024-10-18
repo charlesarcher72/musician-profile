@@ -87,7 +87,6 @@ function App() {
           <div className="content-section">
             <button onClick={prevContent} className="button">❮</button>
             <div className="content">
-              {/* Render the album art image as a button for the first album */}
               <button onClick={currentIndex === 0 ? () => setPopupVisible(true) : null} className="hidden-button ">
                 <img src={currentContent.imgSrc} alt="Album Art" className="album-art" />
               </button>
