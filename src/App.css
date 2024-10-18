@@ -277,7 +277,6 @@ h1 {
   scrollbar-color: #ff0000 rgba(255, 0, 0, 0.1);
 }
 
-
 @keyframes eye-glow {
   0% {
     box-shadow: 0 0 20px rgba(255, 0, 0, 0.7), 0 0 30px rgba(255, 0, 0, 0.4);
