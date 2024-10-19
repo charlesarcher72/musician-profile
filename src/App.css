@@ -42,6 +42,7 @@ h1 {
   max-width: 150px;
   margin: 20px;
   height: auto;
+  border: 3px solid #000000;
   animation: glow 1.5s infinite alternate;
 }
 
