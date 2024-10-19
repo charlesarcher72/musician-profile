@@ -191,7 +191,7 @@ h1 {
   justify-content: flex-start;
   align-items: center;
   z-index: 1000;
-  padding-top: 100px; /* Add some padding to move it slightly away from the top */
+  padding-top: 100px;
   animation: fadeIn 0.5s ease-in-out;
 }
 
@@ -331,12 +331,16 @@ h1 {
     font-size: 0.9em;
   }
 
+  .popup-overlay{
+    padding-top: 50px;
+  }
+
   .popup-overlay h2 {
     font-size: 1em;
   }
 
   .popup-content{
-    max-height: 80vh;
+    max-height: 60vh;
   }
 
   .popup-content:before,
