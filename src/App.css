@@ -182,32 +182,30 @@ h1 {
   min-width: 320px;
   position: fixed;
   flex-direction: column;
-  align-items: center;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 1);
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   z-index: 1000;
+  padding-top: 100px; /* Add some padding to move it slightly away from the top */
   animation: fadeIn 0.5s ease-in-out;
-
 }
 
 .popup-content {
   min-width: 320px;
   background: black;
   color: white;
-  padding: 0; /* Ensure padding is set to zero */
+  padding: 0;
   border-radius: 8px;
-  position: relative; /* Keep this to position the fade effect */
+  position: relative;
   width: 80%;
   max-width: 600px;
-  max-height: 50vh;
-  overflow-y: auto; /* Ensure overflow-y is auto for scrolling */
-  text-align: center;
+  max-height: 60vh;
+  overflow-y: auto;
   z-index: 2000;
 }
 
@@ -335,6 +333,10 @@ h1 {
 
   .popup-overlay h2 {
     font-size: 1em;
+  }
+
+  .popup-content{
+    max-height: 80vh;
   }
 
   .popup-content:before,
