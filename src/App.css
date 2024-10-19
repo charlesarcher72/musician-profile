@@ -219,7 +219,6 @@ h1 {
   z-index: 3000;
 }
 
-
 .popup-overlay h2 {
   font-family: 'Oswald', sans-serif;
   font-size: 1.5em;
@@ -237,6 +236,15 @@ h1 {
 
 .popup-story {
   padding: 10px;
+}
+
+.red-text {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+.gap {
+  height: 5vh;
 }
 
 .popup-content:before,

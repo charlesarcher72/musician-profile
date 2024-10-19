@@ -17,7 +17,8 @@ const Popup = ({ visible, onClose }) => {
             <p>Upon our eyes meeting, it darted towards an alleyway. My feet were gently lifted from the ground and my weightless body began to soar through the cool air. I stumbled into the dark where its eerie shadow loomed over me, standing in a pool of its own blood.</p>
             <p>On its face was a smile, calm and enveloped in autumn’s warm embrace. For some inexplicable reason, at this moment, I felt understood. I felt as if this mysterious being lived a life so similar to my own. It was in this very moment that I truly felt alive again. Though, as I said before, all good things must come to an end. And the darkness of night was quickly approaching.</p>
             <p>Its gaze suddenly shifted as a vicious green liquid exuded from its eyelids, tracing its body with an unsettling glow. Its once reassuring smile quickly became a menacing, blood-stained grin. From its head grew two piercing horns as tentacles erupted from its back. Its eyes began to burn with haunting red embers that reached into the darkest pit of my very core.</p>
-            <p>The creature stepped toward me, laughing diabolically as it sank its teeth into my lifeless body. As my vision began to blur, I smiled. I whispered to myself, with my last waking breath, “The Cinema is a Place for People from All Walks of Life.”</p>
+            <p>The creature stepped toward me, laughing diabolically as it sank its teeth into my lifeless body. As my vision began to blur, I smiled. I whispered to myself, with my last waking breath, “<span className="red-text">The Cinema is a Place for People from All Walks of Life</span>.”</p>
+            <div className="gap"></div>
         </div>
       </div>
       <div className="fade-out"></div>
