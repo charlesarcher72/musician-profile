@@ -192,7 +192,7 @@ h1 {
   justify-content: flex-start;
   align-items: center;
   z-index: 1000;
-  padding-top: 100px;
+  padding-top: 10vh;
   animation: fadeIn 0.5s ease-in-out;
 }
 
@@ -200,7 +200,6 @@ h1 {
   min-width: 320px;
   background: black;
   color: white;
-  padding: 0;
   border-radius: 8px;
   position: relative;
   width: 80%;
@@ -209,6 +208,17 @@ h1 {
   overflow-y: auto;
   z-index: 2000;
 }
+
+.fade-out {
+  position: absolute;
+  bottom: 31.5vh;
+  left: 0;
+  right: 0;
+  height: 10vh;
+  background: linear-gradient(to bottom, transparent, black);
+  z-index: 3000;
+}
+
 
 .popup-overlay h2 {
   font-family: 'Oswald', sans-serif;
@@ -222,7 +232,7 @@ h1 {
   position: sticky;
   top: 0;
   z-index: 2010;
-  padding: 10px 0;
+  padding: 2vh 0;
 }
 
 .popup-story {
@@ -275,6 +285,7 @@ h1 {
   scrollbar-width: thin;
   scrollbar-color: #ff0000 rgba(255, 0, 0, 0.1);
 }
+
 
 @keyframes eye-glow {
   0% {
@@ -333,7 +344,7 @@ h1 {
   }
 
   .popup-overlay{
-    padding-top: 50px;
+    padding-top: 5vh;
   }
 
   .popup-overlay h2 {
@@ -356,5 +367,9 @@ h1 {
 
   .popup-content:after {
     left: calc(50% + 80px);
+  }
+
+  .fade-out{
+    bottom: 23vh;
   }
 }
