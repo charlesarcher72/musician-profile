@@ -1,0 +1,33 @@
+/* Not Found Page Styles */
+.not-found-page {
+  text-align: center;
+  padding: 5rem 0;
+}
+
+.not-found-page h1 {
+  font-size: 8rem;
+  margin: 0;
+  color: var(--accent-primary);
+  text-shadow: 0 0 30px var(--accent-tertiary);
+}
+
+.not-found-page h2 {
+  font-size: 2rem;
+  margin: 0 0 2rem;
+}
+
+.home-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--accent-primary);
+  color: var(--button-text);
+  border-radius: 30px;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 2rem;
+}
+
+.home-button:hover {
+  background-color: var(--accent-secondary);
+  transform: translateY(-3px);
+}

@@ -1,63 +1,286 @@
 {
   "artist": {
     "name": "CHUCK SAVAGE",
+    "profilePic": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/profile.png",
     "bio": "I make music in my closet sometimes in Atlanta, Georgia",
-    "profilePic": "./images/profile.png"
+    "bookingEmail": "chucksavage00@gmail.com"
   },
-  "socialLinks": [
-    {
-      "url": "https://www.instagram.com/csavagejamz/?hl=en",
-      "icon": "faInstagram"
-    },
-    {
-      "url": "https://www.facebook.com/chucksavage00/",
-      "icon": "faFacebook"
-    },
-    {
-      "url": "https://www.youtube.com/@chucksavage00",
-      "icon": "faYoutube"
-    },
-    {
-      "url": "https://music.apple.com/us/artist/chuck-savage/1554962919",
-      "icon": "faApple"
-    },
-    {
-      "url": "https://open.spotify.com/artist/1RiM4nQULgXpc73vrayzDa?si=F6OPetEHToiRu2omuZujZg",
-      "icon": "faSpotify"
-    }
-  ],
   "content": [
     {
-      "imgSrc": "./images/cinema.png",
-      "description": "Check out my new album!",
+      "id": 1,
+      "title": "The Cinema Is a Place for People from All Walks of Life",
+      "type": "Album",
+      "year": "2024",
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/music/The+Cinema+is+a+Place+for+People+from+All+Walks+of+Life/image",
+      "description": "My debut full-length album featuring 8 tracks that showcase the evolution of my sound.",
       "links": [
-        { "name": "Spotify", "url": "https://open.spotify.com/album/1ASsjcAVFRTWM0miYCr23v?si=wonyyqwwQJirI5xlm2wGDw", "icon": "faSpotify" },
-        { "name": "Apple Music", "url": "https://music.apple.com/us/album/the-cinema-is-a-place-for-people-from-all-walks-of-life/1773648331", "icon": "faApple" }
+        { "icon": "faSpotify", "url": "https://open.spotify.com/album/1ASsjcAVFRTWM0miYCr23v?si=wonyyqwwQJirI5xlm2wGDw" },
+        { "icon": "faApple", "url": "https://music.apple.com/us/album/the-cinema-is-a-place-for-people-from-all-walks-of-life/1773648331" }
+      ],
+      "tracks": [
+        {
+          "title": "Nosferatu 2099",
+          "duration": "1:49",
+          "audioUrl": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/music/The+Cinema+is+a+Place+for+People+from+All+Walks+of+Life/01_Nosferatu+2099.mp3"
+        },
+        {
+          "title": "Weird Annoying Guy",
+          "duration": "2:25",
+          "audioUrl": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/music/The+Cinema+is+a+Place+for+People+from+All+Walks+of+Life/02_Weird+Annoying+Guy.mp3"
+        },
+        {
+          "title": "Tanooki Beerio Kart",
+          "duration": "2:04",
+          "audioUrl": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/music/The+Cinema+is+a+Place+for+People+from+All+Walks+of+Life/03_Tanooki+Beerio+Kart.mp3"
+        },
+        {
+          "title": "Drinking Coffee in the Morning and Drinking Beer at Night",
+          "duration": "1:16",
+          "audioUrl": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/music/The+Cinema+is+a+Place+for+People+from+All+Walks+of+Life/04_Drinking+Coffee+in+the+Morning+and+Drinking+Beer+at+Night.mp3"
+        },
+        {
+          "title": "Probiotic of Death",
+          "duration": "2:38",
+          "audioUrl": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/music/The+Cinema+is+a+Place+for+People+from+All+Walks+of+Life/05_Probiotic+of+Death.mp3"
+        },
+        {
+          "title": "Ground Chuck Goes to the Cinema",
+          "duration": "2:58",
+          "audioUrl": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/music/The+Cinema+is+a+Place+for+People+from+All+Walks+of+Life/06_Ground+Chuck+Goes+to+the+Cinema.mp3"
+        },
+        {
+          "title": "Summertime Suppression Shanty",
+          "duration": "3:08",
+          "audioUrl": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/music/The+Cinema+is+a+Place+for+People+from+All+Walks+of+Life/07_Summertime+Suppresion+Shanty.mp3"
+        },
+        {
+          "title": "Funny Little Guy",
+          "duration": "4:00",
+          "audioUrl": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/music/The+Cinema+is+a+Place+for+People+from+All+Walks+of+Life/08_Funny+Little+Guy.mp3"
+        }
       ]
     },
     {
-      "imgSrc": "./images/weirdannoyingguy.png",
-      "description": "Weird Annoying Guy (Single)",
+      "id": 2,
+      "title": "Weird Annoying Guy",
+      "type": "Single",
+      "year": "2023",
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/music/Weird+Annoying+Guy/image.JPEG",
+      "description": "Lead single from the album that introduces the themes and style found throughout The Cinema is a Place for People from All Walks of Life.",
       "links": [
-        { "name": "Spotify", "url": "https://open.spotify.com/track/4LncxMZ5uDQErPSe6qnAzq", "icon": "faSpotify" },
-        { "name": "Apple Music", "url": "https://music.apple.com/us/album/weird-annoying-guy-single/1698719831", "icon": "faApple" }
+        { "icon": "faSpotify", "url": "https://open.spotify.com/track/4LncxMZ5uDQErPSe6qnAzq" },
+        { "icon": "faApple", "url": "https://music.apple.com/us/album/weird-annoying-guy-single/1698719831" }
+      ],
+      "tracks": [
+        {
+          "title": "Weird Annoying Guy",
+          "duration": "2:25",
+          "audioUrl": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/music/Weird+Annoying+Guy/01_Weird+Annoying+Guy.mp3"
+        }
       ]
     },
     {
-      "imgSrc": "./images/brainr0t.png",
-      "description": "4 song EP released in 2022",
+      "id": 3,
+      "title": "brainr0t",
+      "type": "EP",
+      "year": "2022",
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/music/brainr0t/image.JPEG",
+      "description": "Four-track collection that bridges the gap between my early work and the concepts explored on my full-length album.",
       "links": [
-        { "name": "Spotify", "url": "https://open.spotify.com/album/5LC4ozVBPmXfP2P3lQf086?si=NOP5ieDqTO2_nN8HtHL9aw", "icon": "faSpotify" },
-        { "name": "Apple Music", "url": "https://music.apple.com/us/album/brainr0t-ep/1645623112", "icon": "faApple" }
+        { "icon": "faSpotify", "url": "https://open.spotify.com/album/5LC4ozVBPmXfP2P3lQf086?si=NOP5ieDqTO2_nN8HtHL9aw&nd=1&dlsi=172725c8615442fc" },
+        { "icon": "faApple", "url": "https://music.apple.com/us/album/brainr0t-ep/1645623112" }
+      ],
+      "tracks": [
+        {
+          "title": "The Return of Glup Shitto",
+          "duration": "1:07",
+          "audioUrl": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/music/brainr0t/01_The+Return+of+Glup+Shitto.mp3"
+        },
+        {
+          "title": "Ground Chuck",
+          "duration": "2:56",
+          "audioUrl": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/music/brainr0t/02_Ground+Chuck.mp3"
+        },
+        {
+          "title": "Stew Season",
+          "duration": "3:21",
+          "audioUrl": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/music/brainr0t/03_Stew+Season.mp3"
+        },
+        {
+          "title": "Herobrine",
+          "duration": "2:57",
+          "audioUrl": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/music/brainr0t/04_Herobrine.mp3"
+        }
       ]
     },
     {
-      "imgSrc": "./images/braindead.png",
-      "description": "4 song EP released in 2021",
+      "id": 4,
+      "title": "BRAINDEAD",
+      "type": "EP",
+      "year": "2021",
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/music/BRAINDEAD/image.jpg",
+      "description": "My debut EP featuring five tracks that established the foundation of the Chuck Savage sound and approach.",
       "links": [
-        { "name": "Spotify", "url": "https://open.spotify.com/album/77glLLXPtOgctI279vFlzC?si=t7PSEsYbS3e1RGWvYTesHQ", "icon": "faSpotify" },
-        { "name": "Apple Music", "url": "https://music.apple.com/us/album/braindead-ep/1554969599", "icon": "faApple" }
+        { "icon": "faSpotify", "url": "https://open.spotify.com/album/77glLLXPtOgctI279vFlzC?si=t7PSEsYbS3e1RGWvYTesHQ&nd=1&dlsi=a961f909facb45da" },
+        { "icon": "faApple", "url": "https://music.apple.com/us/album/braindead-ep/1554969599" }
+      ],
+      "tracks": [
+        {
+          "title": "Suppression",
+          "duration": "3:52",
+          "audioUrl": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/music/BRAINDEAD/01+Suppression.mp3"
+        },
+        {
+          "title": "Make No Mistake",
+          "duration": "3:21",
+          "audioUrl": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/music/BRAINDEAD/02+Make+No+Mistake.mp3"
+        },
+        {
+          "title": "Revenge of the Brain Invaders",
+          "duration": "3:07",
+          "audioUrl": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/music/BRAINDEAD/03+Revenge+of+the+Brain+Invaders.mp3"
+        },
+        {
+          "title": "WAR!",
+          "duration": "2:50",
+          "audioUrl": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/music/BRAINDEAD/04+WAR!.m4a"
+        },
+        {
+          "title": "When Things Start Looking Up?",
+          "duration": "2:21",
+          "audioUrl": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/music/BRAINDEAD/05+When+Things+Start+Looking+Up_.m4a"
+        }
       ]
+    }
+  ],
+  "socialLinks": [
+    { "icon": "faInstagram", "url": "https://www.instagram.com/csavagejamz/?hl=en" },
+    { "icon": "faFacebook", "url": "https://www.facebook.com/chucksavage00/" },
+    { "icon": "faYoutube", "url": "https://www.youtube.com/@chucksavage00" },
+    { "icon": "faApple", "url": "https://music.apple.com/us/artist/chuck-savage/1554962919" },
+    { "icon": "faSpotify", "url": "https://open.spotify.com/artist/1RiM4nQULgXpc73vrayzDa?si=F6OPetEHToiRu2omuZujZg" }
+  ],
+
+  "gallery": [
+    {
+      "id": 1,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/1.jpg"
+    },
+    {
+      "id": 2,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/2.jpg"
+    },
+    {
+      "id": 3,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/3.jpg"
+    },
+    {
+      "id": 4,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/4.jpg"
+    },
+    {
+      "id": 5,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/5.jpg"
+    },
+    {
+      "id": 6,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/6.jpg"
+    },
+    {
+      "id": 7,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/7.jpg"
+    },
+    {
+      "id": 8,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/8.jpg"
+    },
+    {
+      "id": 9,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/9.jpg"
+    },
+    {
+      "id": 10,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/10.jpg"
+    },
+    {
+      "id": 11,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/11.jpg"
+    },
+    {
+      "id": 12,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/12.jpg"
+    },
+    {
+      "id": 13,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/13.jpg"
+    },
+    {
+      "id": 14,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/14.jpg"
+    },
+    {
+      "id": 15,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/15.jpg"
+    },
+    {
+      "id": 16,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/16.jpg"
+    },
+    {
+      "id": 17,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/17.jpg"
+    },
+    {
+      "id": 18,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/18.jpg"
+    },
+    {
+      "id": 19,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/19.jpg"
+    },
+    {
+      "id": 20,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/20.jpg"
+    },
+    {
+      "id": 21,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/21.jpg"
+    },
+    {
+      "id": 22,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/22.jpg"
+    },
+    {
+      "id": 23,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/23.jpg"
+    },
+    {
+      "id": 24,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/24.jpg"
+    },
+    {
+      "id": 25,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/25.jpg"
+    },
+    {
+      "id": 26,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/26.jpg"
+    },
+    {
+      "id": 27,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/27.jpg"
+    },
+    {
+      "id": 28,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/28.jpg"
+    },
+    {
+      "id": 29,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/29.jpg"
+    },
+    {
+      "id": 30,
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/30.jpg"
     }
   ]
 }

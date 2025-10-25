@@ -1,0 +1,127 @@
+/* Tour Page Styles */
+.tour-page h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+.tour-dates-container {
+  margin-bottom: 3rem;
+}
+
+.tour-dates-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.no-tour-dates {
+  text-align: center;
+  padding: 3rem;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--card-shadow);
+}
+
+.no-tour-dates p {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.no-tour-dates p:first-child {
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.tour-date-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: var(--card-bg);
+  box-shadow: 0 4px 12px var(--card-shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tour-date-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px var(--card-shadow);
+}
+
+.tour-date {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--accent-primary);
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.tour-details {
+  flex: 1;
+}
+
+.tour-details h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.tour-action {
+  margin-left: auto;
+}
+
+.ticket-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--accent-primary);
+  color: white;
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.ticket-button:hover {
+  background-color: var(--accent-primary-dark);
+}
+
+.tour-contact {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 8px;
+  background-color: var(--card-bg);
+  box-shadow: 0 4px 12px var(--card-shadow);
+}
+
+.tour-contact h2 {
+  margin-bottom: 1rem;
+}
+
+.tour-contact a {
+  font-weight: 500;
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+.tour-contact a:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .tour-date-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .tour-date, .tour-details {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .tour-action {
+    margin: 0;
+  }
+}

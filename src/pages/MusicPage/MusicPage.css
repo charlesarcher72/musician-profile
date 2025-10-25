@@ -1,0 +1,222 @@
+/* Music Page Styles */
+.music-page h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+.releases-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.release-full-card {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: var(--card-bg);
+  box-shadow: 0 8px 30px var(--card-shadow);
+}
+
+.release-artwork {
+  flex-shrink: 0;
+  position: relative;
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.release-artwork img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.artwork-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--overlay-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.release-artwork:hover img {
+  transform: scale(1.05);
+}
+
+.release-artwork:hover .artwork-overlay {
+  opacity: 1;
+}
+
+.release-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.release-details h2 {
+  text-align: left;
+  transform: none;
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+  left: auto;
+}
+
+.release-details h2:after {
+  left: 0;
+  transform: none;
+}
+
+.release-details h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.track-list {
+  margin-top: 1rem;
+}
+
+.track-item {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--divider);
+}
+
+.track-play-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--accent-primary);
+  color: var(--button-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  transition: background-color 0.3s, transform 0.2s;
+  flex-shrink: 0;
+}
+
+.track-play-button:hover {
+  background-color: var(--accent-secondary);
+  transform: scale(1.1);
+}
+
+.track-play-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.track-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+/* Add text overflow with ellipsis for track titles */
+.track-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 60px); /* Reserve space for duration */
+  padding-right: 10px;
+}
+
+.track-duration {
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+}
+
+/* Align Listen On heading with streaming buttons */
+.streaming-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.streaming-header h3 {
+  margin: 0;
+}
+
+.streaming-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.streaming-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.streaming-button:hover {
+  background-color: var(--accent-primary);
+  color: var(--button-text);
+  transform: translateY(-3px);
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .release-full-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* Center title when screen is smaller */
+  .release-details {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .release-details h2 {
+    text-align: center;
+  }
+  
+  .release-details h2:after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Keep track list left-aligned for readability */
+  .track-list {
+    width: 100%;
+    text-align: left;
+  }
+  
+  /* Ensure streaming header is properly centered and aligned */
+  .streaming-header {
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .track-item {
+    flex-direction: row;
+  }
+  
+  .streaming-buttons {
+    justify-content: center;
+  }
+}
