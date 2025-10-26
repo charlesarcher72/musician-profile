@@ -202,10 +202,16 @@
     text-align: left;
   }
   
-  .streaming-header {
+ .streaming-header {
     width: 100%;
     justify-content: center;
     flex-direction: column;
+  }
+  
+  .streaming-links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 }
 
