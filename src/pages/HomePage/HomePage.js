@@ -200,53 +200,45 @@ const HomePage = ({ artistData, audioPlayer }) => {
         </div>
       </section>
       
-      {/* Rest of the component stays the same */}
-      <section className="upcoming-shows-section">
-        <h2>Upcoming Shows</h2>
-        {artistData.tourDates && artistData.tourDates.length > 0 ? (
-          <>
-            <div className="tour-dates-list">
-              {artistData.tourDates.slice(0, 3).map((show) => (
-                <div key={show.id} className="tour-date-card">
-                  <div className="tour-date">{show.date}</div>
-                  <div className="tour-details">
-                    <h3>{show.venue}</h3>
-                    <p>{show.location}</p>
-                  </div>
-                  <div className="tour-action">
-                    <a 
-                      href={show.ticketLink} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="ticket-button"
-                      onClick={scrollToTop}
-                    >
-                      Get Tickets
-                    </a>
-                  </div>
+      {/* Only render Upcoming Shows section if there are tour dates */}
+      {artistData.tourDates && artistData.tourDates.length > 0 && (
+        <section className="upcoming-shows-section">
+          <h2>Upcoming Shows</h2>
+          <div className="tour-dates-list">
+            {artistData.tourDates.slice(0, 3).map((show) => (
+              <div key={show.id} className="tour-date-card">
+                <div className="tour-date">{show.date}</div>
+                <div className="tour-details">
+                  <h3>{show.venue}</h3>
+                  <p>{show.location}</p>
                 </div>
-              ))}
-            </div>
-            {artistData.tourDates.length > 3 && (
-              <div className="section-action">
-                <Link 
-                  to="/tour" 
-                  className="view-all-button"
-                  onClick={scrollToTop}
-                >
-                  View All Tour Dates
-                </Link>
+                <div className="tour-action">
+                  <a 
+                    href={show.ticketLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="ticket-button"
+                    onClick={scrollToTop}
+                  >
+                    Get Tickets
+                  </a>
+                </div>
               </div>
-            )}
-          </>
-        ) : (
-          <div className="booking-inquiries">
-            <p className="no-shows-message">No upcoming shows scheduled at this time.</p>
-            <h3>Booking Inquiries</h3>
-            <p>For booking inquiries, please contact: <a href={`mailto:${artistData.artist.bookingEmail}`}>{artistData.artist.bookingEmail}</a></p>
+            ))}
           </div>
-        )}
-      </section>
+          {artistData.tourDates.length > 3 && (
+            <div className="section-action">
+              <Link 
+                to="/tour" 
+                className="view-all-button"
+                onClick={scrollToTop}
+              >
+                View All Tour Dates
+              </Link>
+            </div>
+          )}
+        </section>
+      )}
       
       {artistData.gallery && artistData.gallery.length > 0 && (
         <section className="gallery-preview-section">
