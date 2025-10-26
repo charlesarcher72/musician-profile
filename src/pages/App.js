@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider } from '../context/ThemeContext';
 import Header from '../components/Header/Header';
@@ -15,7 +15,6 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [artistData, setArtistData] = useState(null);
   const [error, setError] = useState(null);
-  
   const initialTrack = artistData?.artist?.featuredSong?.url || null;
   const audioPlayer = useAudioPlayer(initialTrack);
 
