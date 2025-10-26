@@ -40,9 +40,33 @@
   margin-bottom: 2rem;
 }
 
+/* Critical fix: This is where we handle the button container */
 .hero-buttons {
   display: flex;
   gap: 1rem;
+}
+
+/* Primary button styling */
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--accent-primary);
+  color: var(--button-text);
+  border-radius: 30px;
+  transition: transform 0.2s, background-color 0.3s;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(138, 43, 226, 0.3);
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  background-color: var(--accent-secondary);
+  transform: translateY(-3px);
 }
 
 .music-carousel-section {
@@ -105,8 +129,12 @@
   flex: 1;
   overflow: hidden;
   position: relative;
+  /* Fixed height for the carousel container - increased to accommodate content */
+  height: 400px;
+  touch-action: pan-x; /* Optimize for horizontal swiping */
 }
 
+/* Fixed size for all release cards */
 .release-card {
   display: flex;
   gap: 2rem;
@@ -115,6 +143,8 @@
   background-color: var(--card-bg);
   box-shadow: 0 8px 30px var(--card-shadow);
   transition: transform 0.3s, box-shadow 0.3s;
+  height: 360px; /* Increased fixed height */
+  width: 100%;
 }
 
 .release-image {
@@ -178,11 +208,24 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Fixed height for title container - increased */
+.release-title-container {
+  height: 100px;
+  min-height: 100px; /* Ensure minimum height */
 }
 
 .release-info h3 {
   font-size: 1.8rem;
   margin-bottom: 0.3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Allow 2 lines of title */
+  -webkit-box-orient: vertical;
 }
 
 .release-type {
@@ -191,14 +234,28 @@
   font-size: 0.9rem;
 }
 
-.release-description {
+/* Fixed height for description container - increased without overflow */
+.release-description-container {
+  min-height: 160px; /* Increased to fit more content */
   margin-bottom: 1.5rem;
+  flex: 1; /* Take available space */
+  display: flex;
+  flex-direction: column;
+}
+
+.release-description {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6; /* Allow 6 lines of description text */
+  -webkit-box-orient: vertical;
 }
 
 .streaming-links {
   display: flex;
   gap: 1rem;
-  margin-top: auto;
+  height: 40px; /* Fixed height */
 }
 
 .streaming-link {
@@ -279,6 +336,7 @@
   margin-right: auto;
 }
 
+/* Fixed height for tour date cards - increased */
 .tour-date-card {
   display: flex;
   align-items: center;
@@ -288,6 +346,7 @@
   background-color: var(--card-bg);
   box-shadow: 0 4px 12px var(--card-shadow);
   transition: transform 0.3s, box-shadow 0.3s;
+  min-height: 120px; /* Increased fixed height */
 }
 
 .tour-date-card:hover {
@@ -310,10 +369,18 @@
 .tour-details h3 {
   font-size: 1.5rem;
   margin-bottom: 0.3rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .tour-details p {
   color: var(--text-tertiary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .tour-action {
@@ -436,6 +503,14 @@
   box-shadow: 0 6px 16px rgba(138, 43, 226, 0.4);
 }
 
+/* Swipe functionality styles */
+@keyframes swipeHint {
+  0% { transform: translateX(0); opacity: 0.7; }
+  25% { transform: translateX(-20px); opacity: 1; }
+  75% { transform: translateX(20px); opacity: 1; }
+  100% { transform: translateX(0); opacity: 0.7; }
+}
+
 /* Media Queries */
 @media (max-width: 1200px) {
   .gallery-preview {
@@ -461,26 +536,115 @@
   .hero-text h1 {
     font-size: 2.5rem;
   }
+  
+  .music-carousel-section h2,
+  .upcoming-shows-section h2,
+  .gallery-preview-section h2 {
+    font-size: 2.2rem;
+  }
+  
+  .artist-bio {
+    font-size: 1.1rem;
+  }
+  
+  .release-info h3 {
+    font-size: 1.6rem;
+  }
+  
+  .tour-details h3 {
+    font-size: 1.4rem;
+  }
+  
+  .booking-inquiries h3 {
+    font-size: 1.4rem;
+  }
 }
 
 @media (max-width: 992px) {
   .gallery-preview {
     grid-template-columns: repeat(2, 1fr);
   }
+  
+  .music-carousel-section h2,
+  .upcoming-shows-section h2,
+  .gallery-preview-section h2 {
+    font-size: 2rem;
+  }
+
+  /* Adjust fixed heights for smaller screens */
+  .release-carousel {
+    height: 600px;
+  }
+  
+  .release-card {
+    height: 560px;
+  }
+
+  .release-title-container {
+    height: 80px;
+    min-height: 80px;
+  }
+
+  .release-description-container {
+    min-height: 320px;
+  }
 }
 
 @media (max-width: 768px) {
+  /* Hide carousel navigation buttons on mobile */
+  .carousel-button {
+    display: none;
+  }
+  
+  /* Make carousel take full width when buttons are hidden */
+  .release-carousel {
+    width: 100%;
+  }
+  
+  /* Change cursor on active swipe */
+  .release-carousel:active {
+    cursor: grabbing;
+  }
+  
   .hero-content {
     flex-direction: column;
     text-align: center;
   }
   
-  .hero-buttons {
-    justify-content: center;
+  .hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
   }
   
-  h2 {
-    font-size: 2rem;
+  .hero-buttons {
+    display: inline-flex;
+    justify-content: center;
+    width: auto;
+  }
+  
+  .primary-button {
+    width: auto;
+    min-width: auto;
+    max-width: fit-content;
+  }
+  
+  .music-carousel-section h2,
+  .upcoming-shows-section h2,
+  .gallery-preview-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .music-carousel-section h2:after,
+  .upcoming-shows-section h2:after,
+  .gallery-preview-section h2:after {
+    width: 50px;
+    bottom: -8px;
+  }
+  
+  .artist-bio {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
   }
   
   .release-card {
@@ -488,6 +652,11 @@
     align-items: center;
     text-align: center;
     padding: 1.5rem;
+    height: 600px; /* Increased for mobile layout */
+  }
+  
+  .release-carousel {
+    height: 640px; /* Adjust container height for mobile */
   }
   
   .release-image {
@@ -498,6 +667,26 @@
   
   .release-info {
     text-align: center;
+    width: 100%; /* Full width on mobile */
+  }
+
+  /* Adjust container heights for mobile */
+  .release-title-container {
+    height: 80px;
+    min-height: 80px;
+  }
+  
+  .release-description-container {
+    min-height: 250px;
+  }
+  
+  .release-info h3 {
+    font-size: 1.5rem;
+  }
+  
+  .release-description {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
   }
   
   .streaming-links {
@@ -512,15 +701,43 @@
     flex-direction: column;
     text-align: center;
     padding: 1.5rem;
+    min-height: 180px; /* Adjust height for mobile */
   }
   
-  .tour-date, .tour-details {
+  .tour-date {
+    font-size: 1.1rem;
     width: 100%;
     margin-bottom: 1rem;
   }
   
+  .tour-details {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .tour-details h3 {
+    font-size: 1.3rem;
+  }
+  
+  .tour-details p {
+    font-size: 0.95rem;
+  }
+  
   .tour-action {
     margin: 0;
+  }
+  
+  .booking-inquiries {
+    padding: 1.5rem;
+  }
+  
+  .booking-inquiries h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.7rem;
+  }
+  
+  .booking-inquiries p {
+    font-size: 1rem;
   }
 }
 
@@ -532,9 +749,105 @@
   
   .hero-text h1 {
     font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Additional refinements for the button on smallest screens */
+  .hero-buttons {
+    display: inline-flex;
+    width: auto;
+  }
+  
+  .primary-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    gap: 0.6rem;
+    width: auto;
+    min-width: auto;
+    max-width: fit-content;
+  }
+  
+  .music-carousel-section h2,
+  .upcoming-shows-section h2,
+  .gallery-preview-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .music-carousel-section h2:after,
+  .upcoming-shows-section h2:after,
+  .gallery-preview-section h2:after {
+    width: 40px;
+    height: 2px;
+    bottom: -6px;
+  }
+  
+  .artist-bio {
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .release-carousel {
+    height: 580px; /* Adjusted for smallest screens */
+  }
+  
+  .release-card {
+    height: 540px; /* Adjusted for smallest screens */
+  }
+  
+  .release-image {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .release-info h3 {
+    font-size: 1.3rem;
+  }
+  
+  .release-description {
+    font-size: 0.9rem;
+  }
+  
+  .release-type {
+    font-size: 0.8rem;
   }
   
   .gallery-preview {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: minmax(auto, 300px); /* Set a maximum width for the column */
+    justify-content: center; /* Center the grid column */
+    gap: 1rem;
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .gallery-item {
+    width: 100%; /* Ensure items take full width of their container */
+  }
+  
+  .tour-date {
+    font-size: 1rem;
+  }
+  
+  .tour-details h3 {
+    font-size: 1.2rem;
+  }
+  
+  .tour-details p {
+    font-size: 0.9rem;
+  }
+  
+  .booking-inquiries h3 {
+    font-size: 1.2rem;
+  }
+  
+  .booking-inquiries p {
+    font-size: 0.95rem;
+  }
+  
+  .view-all-button {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
   }
 }

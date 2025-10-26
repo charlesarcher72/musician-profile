@@ -157,6 +157,20 @@ header {
 .mobile-social-links .social-icon-link {
   font-size: 1.5rem;
   color: var(--accent-primary);
+  background-color: var(--bg-tertiary);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.mobile-social-links .social-icon-link:hover {
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+  transform: translateY(-3px);
 }
 
 /* Media Queries */

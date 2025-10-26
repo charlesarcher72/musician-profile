@@ -9,10 +9,10 @@
   --text-primary: #121212;
   --text-secondary: #4a4a4a;
   --text-tertiary: #717171;
-  --accent-primary: #8a2be2; /* Purple */
-  --accent-secondary: #6a0dad; /* Darker Purple */
-  --accent-tertiary: #9966cc; /* Lighter Purple */
-  --card-bg: #ffffff;
+  --accent-primary: #8a2be2;
+  --accent-secondary: #6a0dad;
+  --accent-tertiary: #9966cc;
+  --card-bg: #f0f0f5;
   --card-border: rgba(0, 0, 0, 0.1);
   --card-shadow: rgba(0, 0, 0, 0.05);
   --nav-bg: rgba(255, 255, 255, 0.9);
@@ -40,9 +40,9 @@
   --text-primary: #ffffff;
   --text-secondary: #b3b3b3;
   --text-tertiary: #8c8c8c;
-  --accent-primary: #a25ccb; /* Brighter Purple for dark mode */
-  --accent-secondary: #c17ee6; /* Lighter Purple */
-  --accent-tertiary: #9966cc; /* Medium Purple */
+  --accent-primary: #a25ccb;
+  --accent-secondary: #c17ee6;
+  --accent-tertiary: #9966cc;
   --card-bg: #1e1e1e;
   --card-border: rgba(255, 255, 255, 0.1);
   --card-shadow: rgba(0, 0, 0, 0.3);

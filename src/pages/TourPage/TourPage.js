@@ -1,64 +1,68 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useLayoutEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import './TourPage.css';
 
 const TourPage = ({ tourDates = [], bookingEmail }) => {
+  // useLayoutEffect runs synchronously before browser paint
+  // This ensures scrolling happens before any rendering or animations
+  useLayoutEffect(() => {
+    // Force immediate scroll to top with no smooth behavior
+    window.scrollTo(0, 0);
+    
+    // Optional: disable smooth scrolling temporarily
+    const originalStyle = document.documentElement.style.scrollBehavior;
+    document.documentElement.style.scrollBehavior = 'auto';
+    
+    // Cleanup function to restore original scroll behavior
+    return () => {
+      document.documentElement.style.scrollBehavior = originalStyle;
+    };
+  }, []);
+  
+  // Simple content with minimal animations
   return (
-    <motion.div
-      className="page tour-page"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.3 }}
-    >
+    <div className="page tour-page">
       <h1>Tour Dates</h1>
       <div className="tour-dates-container">
-        {tourDates.length > 0 ? (
-          <div className="tour-dates-list">
-            {tourDates.map((show) => (
-              <motion.div 
-                key={show.id} 
-                className="tour-date-card"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: show.id * 0.1 }}
-              >
-                <div className="tour-date">{show.date}</div>
-                <div className="tour-details">
-                  <h3>{show.venue}</h3>
-                  <p>{show.location}</p>
+        <AnimatePresence mode="wait">
+          {tourDates.length > 0 ? (
+            <motion.div 
+              className="tour-dates-list"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              key="tour-dates"
+            >
+              {tourDates.map((show) => (
+                <div key={show.id} className="tour-date-card">
+                  <div className="tour-date">{show.date}</div>
+                  <div className="tour-details">
+                    <h3>{show.venue}</h3>
+                    <p>{show.location}</p>
+                  </div>
+                  <div className="tour-action">
+                    <a href={show.ticketLink} target="_blank" rel="noopener noreferrer" className="ticket-button">
+                      Get Tickets
+                    </a>
+                  </div>
                 </div>
-                <div className="tour-action">
-                  <a href={show.ticketLink} target="_blank" rel="noopener noreferrer" className="ticket-button">
-                    Get Tickets
-                  </a>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        ) : (
-          <motion.div 
-            className="no-tour-dates"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <p>There are no upcoming tour dates at this time.</p>
-            <p>Please check back soon for new announcements!</p>
-          </motion.div>
-        )}
+              ))}
+            </motion.div>
+          ) : (
+            <div className="no-tour-dates" key="no-tour-dates">
+              <p>There are no upcoming tour dates at this time.</p>
+              <p>Please check back soon for new announcements!</p>
+            </div>
+          )}
+        </AnimatePresence>
       </div>
       
-      <motion.div 
-        className="tour-contact"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 0.5 }}
-      >
+      <div className="tour-contact">
         <h2>Booking Inquiries</h2>
         <p>For booking inquiries, please contact: <a href={`mailto:${bookingEmail}`}>{bookingEmail}</a></p>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 };
 

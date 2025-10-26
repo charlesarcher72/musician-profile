@@ -20,7 +20,6 @@ const Header = ({ artistData }) => {
     });
   };
 
-  // Calculate mobile menu height for animation
   useEffect(() => {
     if (mobileMenuRef.current) {
       setMenuHeight(mobileMenuRef.current.scrollHeight);

@@ -110,6 +110,11 @@
 
 /* Media Queries */
 @media (max-width: 768px) {
+  .tour-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
   .tour-date-card {
     flex-direction: column;
     text-align: center;
@@ -123,5 +128,11 @@
   
   .tour-action {
     margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .tour-page h1 {
+    font-size: 2rem;
   }
 }

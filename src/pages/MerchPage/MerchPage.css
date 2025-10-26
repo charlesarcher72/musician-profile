@@ -76,3 +76,17 @@
   background-color: var(--accent-secondary);
   transform: translateY(-3px);
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .merch-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .merch-page h1 {
+    font-size: 2rem;
+  }
+}

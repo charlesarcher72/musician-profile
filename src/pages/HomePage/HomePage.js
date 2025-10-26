@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-  faMusic, faCalendarAlt, faCaretLeft, 
-  faCaretRight, faPlay 
-} from '@fortawesome/free-solid-svg-icons';
+import { faMusic, faCaretLeft, faCaretRight, faPlay } from '@fortawesome/free-solid-svg-icons';
 import { getIcon } from '../../utils/iconUtils';
 
 import './HomePage.css';
@@ -13,7 +10,14 @@ import './HomePage.css';
 const HomePage = ({ artistData, audioPlayer }) => {
   const [currentContentIndex, setCurrentContentIndex] = useState(0);
   const [displayedGalleryItems, setDisplayedGalleryItems] = useState([]);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+  
+  // Minimum swipe distance (in px)
+  const minSwipeDistance = 50;
+  
+  // Reference to the carousel container
+  const carouselRef = useRef(null);
   
   const getGalleryItems = (startIndex, count = 4) => {
     if (!artistData.gallery || artistData.gallery.length === 0) return [];
@@ -38,25 +42,24 @@ const HomePage = ({ artistData, audioPlayer }) => {
     if (!artistData.gallery || artistData.gallery.length <= 4) return;
     
     const rotateGallery = () => {
-      setIsAnimating(true);
+      const currentFirstIndex = artistData.gallery.findIndex(
+        item => item.id === displayedGalleryItems[0]?.id
+      );
       
-      setTimeout(() => {
-        const currentFirstIndex = artistData.gallery.findIndex(
-          item => item.id === displayedGalleryItems[0]?.id
-        );
-        
-        const nextStartIndex = (currentFirstIndex + 4) % artistData.gallery.length;
-        setDisplayedGalleryItems(getGalleryItems(nextStartIndex));
-        
-        setTimeout(() => {
-          setIsAnimating(false);
-        }, 50);
-      }, 500);
+      const nextStartIndex = (currentFirstIndex + 1) % artistData.gallery.length;
+      setDisplayedGalleryItems(getGalleryItems(nextStartIndex));
     };
     
     const galleryInterval = setInterval(rotateGallery, 5000);
     return () => clearInterval(galleryInterval);
   }, [artistData.gallery, displayedGalleryItems]);
+  
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
   
   const nextContent = () => {
     setCurrentContentIndex((prevIndex) => 
@@ -68,6 +71,38 @@ const HomePage = ({ artistData, audioPlayer }) => {
     setCurrentContentIndex((prevIndex) => 
       (prevIndex - 1 + artistData.content.length) % artistData.content.length
     );
+  };
+  
+  // Touch event handlers for swipe functionality
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+  
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+  
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isSwipe = Math.abs(distance) > minSwipeDistance;
+    
+    if (isSwipe) {
+      if (distance > 0) {
+        nextContent();
+      } else {
+        prevContent();
+      }
+    }
+    
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
+  
+  const handleIndicatorClick = (index) => {
+    setCurrentContentIndex(index);
   };
   
   const currentContent = artistData.content[currentContentIndex];
@@ -89,13 +124,13 @@ const HomePage = ({ artistData, audioPlayer }) => {
             <h1>{artistData.artist.name}</h1>
             <p className="artist-bio">{artistData.artist.bio}</p>
             <div className="hero-buttons">
-              <Link to="/music" className="primary-button">
+              <Link 
+                to="/music" 
+                className="primary-button"
+                onClick={scrollToTop}
+              >
                 <FontAwesomeIcon icon={faMusic} />
                 <span>Listen Now</span>
-              </Link>
-              <Link to="/tour" className="secondary-button">
-                <FontAwesomeIcon icon={faCalendarAlt} />
-                <span>Tour Dates</span>
               </Link>
             </div>
           </div>
@@ -109,7 +144,13 @@ const HomePage = ({ artistData, audioPlayer }) => {
             <FontAwesomeIcon icon={faCaretLeft} />
           </button>
           
-          <div className="release-carousel">
+          <div 
+            className="release-carousel"
+            ref={carouselRef}
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
             <div className="release-card">
               <div className="release-image">
                 <img src={currentContent.imgSrc} alt={currentContent.title || "Album Art"} />
@@ -134,7 +175,13 @@ const HomePage = ({ artistData, audioPlayer }) => {
                 <p className="release-description">{currentContent.description}</p>
                 <div className="streaming-links">
                   {currentContent.links && currentContent.links.map((link, index) => (
-                    <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" className="streaming-link">
+                    <a 
+                      key={index} 
+                      href={link.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="streaming-link"
+                    >
                       <FontAwesomeIcon icon={getIcon(link.icon)} />
                     </a>
                   ))}
@@ -152,12 +199,13 @@ const HomePage = ({ artistData, audioPlayer }) => {
             <button 
               key={index} 
               className={`indicator ${index === currentContentIndex ? 'active' : ''}`}
-              onClick={() => setCurrentContentIndex(index)}
+              onClick={() => handleIndicatorClick(index)}
             ></button>
           ))}
         </div>
       </section>
       
+      {/* Rest of the component stays the same */}
       <section className="upcoming-shows-section">
         <h2>Upcoming Shows</h2>
         {artistData.tourDates && artistData.tourDates.length > 0 ? (
@@ -171,7 +219,13 @@ const HomePage = ({ artistData, audioPlayer }) => {
                     <p>{show.location}</p>
                   </div>
                   <div className="tour-action">
-                    <a href={show.ticketLink} target="_blank" rel="noopener noreferrer" className="ticket-button">
+                    <a 
+                      href={show.ticketLink} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="ticket-button"
+                      onClick={scrollToTop}
+                    >
                       Get Tickets
                     </a>
                   </div>
@@ -180,7 +234,11 @@ const HomePage = ({ artistData, audioPlayer }) => {
             </div>
             {artistData.tourDates.length > 3 && (
               <div className="section-action">
-                <Link to="/tour" className="view-all-button">
+                <Link 
+                  to="/tour" 
+                  className="view-all-button"
+                  onClick={scrollToTop}
+                >
                   View All Tour Dates
                 </Link>
               </div>
@@ -202,7 +260,7 @@ const HomePage = ({ artistData, audioPlayer }) => {
             {displayedGalleryItems.map((item, index) => (
               <div 
                 key={`${item.id}-${index}`}
-                className={`gallery-item ${isAnimating ? 'fade-out' : 'fade-in'}`}
+                className="gallery-item"
               >
                 <img src={item.imgSrc} alt="" />
               </div>
@@ -210,7 +268,11 @@ const HomePage = ({ artistData, audioPlayer }) => {
           </div>
           {artistData.gallery.length > 4 && (
             <div className="section-action">
-              <Link to="/gallery" className="view-all-button">
+              <Link 
+                to="/gallery" 
+                className="view-all-button"
+                onClick={scrollToTop}
+              >
                 View Full Gallery
               </Link>
             </div>

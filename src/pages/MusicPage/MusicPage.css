@@ -85,6 +85,7 @@
 
 .track-list {
   margin-top: 1rem;
+  width: 100%;
 }
 
 .track-item {
@@ -125,12 +126,11 @@
   align-items: center;
 }
 
-/* Add text overflow with ellipsis for track titles */
 .track-title {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: calc(100% - 60px); /* Reserve space for duration */
+  max-width: calc(100% - 60px);
   padding-right: 10px;
 }
 
@@ -139,7 +139,6 @@
   flex-shrink: 0;
 }
 
-/* Align Listen On heading with streaming buttons */
 .streaming-header {
   display: flex;
   align-items: center;
@@ -180,12 +179,13 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 1.5rem;
   }
   
-  /* Center title when screen is smaller */
   .release-details {
     align-items: center;
     text-align: center;
+    width: 100%;
   }
   
   .release-details h2 {
@@ -197,13 +197,11 @@
     transform: translateX(-50%);
   }
   
-  /* Keep track list left-aligned for readability */
   .track-list {
     width: 100%;
     text-align: left;
   }
   
-  /* Ensure streaming header is properly centered and aligned */
   .streaming-header {
     width: 100%;
     justify-content: center;
@@ -212,11 +210,83 @@
 }
 
 @media (max-width: 768px) {
+  .music-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .release-full-card {
+    padding: 1.2rem;
+    gap: 1.5rem;
+  }
+  
+  .release-artwork {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .release-details {
+    gap: 1rem;
+  }
+  
+  .release-details h2 {
+    font-size: 1.8rem;
+  }
+  
   .track-item {
     flex-direction: row;
+    padding: 0.6rem 0;
   }
   
   .streaming-buttons {
     justify-content: center;
+    width: 100%;
+  }
+  
+  .streaming-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .track-info {
+    width: calc(100% - 40px);
+  }
+  
+  .track-title {
+    max-width: calc(100% - 50px);
+  }
+}
+
+@media (max-width: 480px) {
+  .music-page h1 {
+    font-size: 2rem;
+  }
+  
+  .release-artwork {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .release-full-card {
+    padding: 1rem;
+  }
+  
+  .release-details h2 {
+    font-size: 1.5rem;
+  }
+  
+  .release-details h3 {
+    font-size: 1.1rem;
+  }
+  
+  .streaming-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  
+  .track-play-button {
+    width: 25px;
+    height: 25px;
+    margin-right: 0.7rem;
   }
 }

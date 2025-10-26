@@ -1,4 +1,4 @@
-/* Gallery Page Styles */
+* Gallery Page Styles */
 .gallery-page h1 {
   text-align: center;
   font-size: 3rem;
@@ -109,4 +109,18 @@
 
 .close-modal:hover {
   background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .gallery-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-page h1 {
+    font-size: 2rem;
+  }
 }
