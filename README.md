@@ -7,13 +7,14 @@ This is a React-based web application designed to showcase an artist's profile, 
 - **Artist profile section** with a profile picture, name, and bio
 - **Social media links** with Font Awesome icons
 - **Music player** with album/track navigation and streaming links
-- **Tour dates listing** with venue information and ticket links
-- **Photo gallery** with lightbox functionality
-- **Merchandise store** with product listings
+- **Tour dates listing** with venue information and ticket links (conditionally rendered)
+- **Photo gallery** with lightbox functionality (conditionally rendered)
+- **Merchandise store** with product listings (conditionally rendered)
 - **Dark/Light theme toggle** for personalized viewing
 - **Responsive design** for all devices
 - **Animated page transitions** using Framer Motion
 - **Dynamic content loading** from a JSON file
+- **Conditional navigation** - menu items only appear when content is available
 
 ## Technologies Used
 
@@ -119,6 +120,16 @@ The app expects a JSON file (`content.json`) in the public directory with the fo
 }
 ```
 
+### Optional Sections
+
+The following sections are **optional** and will only be displayed if data is provided:
+
+- **Tour Dates**: The Tour navigation link and page will only appear if the `tourDates` array contains one or more tour dates
+- **Gallery**: The Gallery navigation link and page will only appear if the `gallery` array contains one or more images
+- **Merchandise**: The Merch navigation link and page will only appear if the `merchandise` array contains one or more products
+
+You can safely omit these arrays from your JSON file, or leave them as empty arrays `[]`, and the application will adapt accordingly.
+
 ## Project Structure
 
 ```
@@ -164,6 +175,16 @@ useEffect(() => {
   fetchData();
 }, []);
 ```
+
+### Conditional Rendering
+Navigation links and routes are only rendered when content is available:
+```javascript
+{artistData.tourDates && artistData.tourDates.length > 0 && (
+  <li><Link to="/tour">Tour</Link></li>
+)}
+```
+
+This ensures users only see navigation options for content that actually exists, creating a cleaner and more professional user experience.
 
 ### Theme Switching
 Toggle between dark and light themes with a built-in theme switcher using React Context:

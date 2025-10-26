@@ -1,4 +1,3 @@
-import React, { useLayoutEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './TourPage.css';
 
@@ -41,10 +40,12 @@ const TourPage = ({ tourDates = [], bookingEmail }) => {
         </AnimatePresence>
       </div>
       
-      <div className="tour-contact">
-        <h2>Booking Inquiries</h2>
-        <p>For booking inquiries, please contact: <a href={`mailto:${bookingEmail}`}>{bookingEmail}</a></p>
-      </div>
+      {bookingEmail && (
+        <div className="tour-contact">
+          <h2>Booking Inquiries</h2>
+          <p>For booking inquiries, please contact: <a href={`mailto:${bookingEmail}`}>{bookingEmail}</a></p>
+        </div>
+      )}
     </div>
   );
 };

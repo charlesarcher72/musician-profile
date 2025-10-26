@@ -16,7 +16,10 @@ const AppRoutes = ({ artistData, audioPlayer }) => {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<HomePage artistData={artistData} audioPlayer={audioPlayer} />} />
         <Route path="/music" element={<MusicPage artistData={artistData} audioPlayer={audioPlayer} />} />
-        <Route path="/tour" element={<TourPage tourDates={artistData.tourDates} bookingEmail={artistData.artist.bookingEmail} />} />
+        
+        {artistData.tourDates && artistData.tourDates.length > 0 && (
+          <Route path="/tour" element={<TourPage tourDates={artistData.tourDates} bookingEmail={artistData.artist.bookingEmail} />} />
+        )}
         
         {artistData.gallery && artistData.gallery.length > 0 && (
           <Route path="/gallery" element={<GalleryPage gallery={artistData.gallery} />} />

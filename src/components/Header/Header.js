@@ -37,7 +37,9 @@ const Header = ({ artistData }) => {
           <ul>
             <li><Link to="/" onClick={scrollToTop}>Home</Link></li>
             <li><Link to="/music" onClick={scrollToTop}>Music</Link></li>
-            <li><Link to="/tour" onClick={scrollToTop}>Tour</Link></li>
+            {artistData.tourDates && artistData.tourDates.length > 0 && (
+              <li><Link to="/tour" onClick={scrollToTop}>Tour</Link></li>
+            )}
             {artistData.gallery && artistData.gallery.length > 0 && (
               <li><Link to="/gallery" onClick={scrollToTop}>Gallery</Link></li>
             )}
@@ -70,7 +72,9 @@ const Header = ({ artistData }) => {
         <ul>
           <li><Link to="/" onClick={() => { setShowMobileMenu(false); scrollToTop(); }}>Home</Link></li>
           <li><Link to="/music" onClick={() => { setShowMobileMenu(false); scrollToTop(); }}>Music</Link></li>
-          <li><Link to="/tour" onClick={() => { setShowMobileMenu(false); scrollToTop(); }}>Tour</Link></li>
+          {artistData.tourDates && artistData.tourDates.length > 0 && (
+            <li><Link to="/tour" onClick={() => { setShowMobileMenu(false); scrollToTop(); }}>Tour</Link></li>
+          )}
           {artistData.gallery && artistData.gallery.length > 0 && (
             <li><Link to="/gallery" onClick={() => { setShowMobileMenu(false); scrollToTop(); }}>Gallery</Link></li>
           )}
