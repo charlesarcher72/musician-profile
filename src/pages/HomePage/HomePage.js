@@ -12,11 +12,7 @@ const HomePage = ({ artistData, audioPlayer }) => {
   const [displayedGalleryItems, setDisplayedGalleryItems] = useState([]);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
-  
-  // Minimum swipe distance (in px)
   const minSwipeDistance = 50;
-  
-  // Reference to the carousel container
   const carouselRef = useRef(null);
   
   const getGalleryItems = (startIndex, count = 4) => {
@@ -73,7 +69,6 @@ const HomePage = ({ artistData, audioPlayer }) => {
     );
   };
   
-  // Touch event handlers for swipe functionality
   const onTouchStart = (e) => {
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);

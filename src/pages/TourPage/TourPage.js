@@ -3,23 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './TourPage.css';
 
 const TourPage = ({ tourDates = [], bookingEmail }) => {
-  // useLayoutEffect runs synchronously before browser paint
-  // This ensures scrolling happens before any rendering or animations
-  useLayoutEffect(() => {
-    // Force immediate scroll to top with no smooth behavior
-    window.scrollTo(0, 0);
-    
-    // Optional: disable smooth scrolling temporarily
-    const originalStyle = document.documentElement.style.scrollBehavior;
-    document.documentElement.style.scrollBehavior = 'auto';
-    
-    // Cleanup function to restore original scroll behavior
-    return () => {
-      document.documentElement.style.scrollBehavior = originalStyle;
-    };
-  }, []);
-  
-  // Simple content with minimal animations
   return (
     <div className="page tour-page">
       <h1>Tour Dates</h1>

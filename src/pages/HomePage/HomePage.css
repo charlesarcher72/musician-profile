@@ -40,13 +40,11 @@
   margin-bottom: 2rem;
 }
 
-/* Critical fix: This is where we handle the button container */
 .hero-buttons {
   display: flex;
   gap: 1rem;
 }
 
-/* Primary button styling */
 .primary-button {
   display: inline-flex;
   align-items: center;
@@ -129,12 +127,10 @@
   flex: 1;
   overflow: hidden;
   position: relative;
-  /* Fixed height for the carousel container - increased to accommodate content */
   height: 400px;
-  touch-action: pan-x; /* Optimize for horizontal swiping */
+  touch-action: pan-x;
 }
 
-/* Fixed size for all release cards */
 .release-card {
   display: flex;
   gap: 2rem;
@@ -143,7 +139,7 @@
   background-color: var(--card-bg);
   box-shadow: 0 8px 30px var(--card-shadow);
   transition: transform 0.3s, box-shadow 0.3s;
-  height: 360px; /* Increased fixed height */
+  height: 360px;
   width: 100%;
 }
 
@@ -212,10 +208,9 @@
   height: 100%;
 }
 
-/* Fixed height for title container - increased */
 .release-title-container {
   height: 100px;
-  min-height: 100px; /* Ensure minimum height */
+  min-height: 100px;
 }
 
 .release-info h3 {
@@ -224,7 +219,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* Allow 2 lines of title */
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
 
@@ -234,11 +229,10 @@
   font-size: 0.9rem;
 }
 
-/* Fixed height for description container - increased without overflow */
 .release-description-container {
-  min-height: 160px; /* Increased to fit more content */
+  min-height: 160px;
   margin-bottom: 1.5rem;
-  flex: 1; /* Take available space */
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
@@ -248,14 +242,14 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 6; /* Allow 6 lines of description text */
+  -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
 }
 
 .streaming-links {
   display: flex;
   gap: 1rem;
-  height: 40px; /* Fixed height */
+  height: 40px;
 }
 
 .streaming-link {
@@ -336,7 +330,6 @@
   margin-right: auto;
 }
 
-/* Fixed height for tour date cards - increased */
 .tour-date-card {
   display: flex;
   align-items: center;
@@ -346,7 +339,7 @@
   background-color: var(--card-bg);
   box-shadow: 0 4px 12px var(--card-shadow);
   transition: transform 0.3s, box-shadow 0.3s;
-  min-height: 120px; /* Increased fixed height */
+  min-height: 120px;
 }
 
 .tour-date-card:hover {
@@ -503,7 +496,6 @@
   box-shadow: 0 6px 16px rgba(138, 43, 226, 0.4);
 }
 
-/* Swipe functionality styles */
 @keyframes swipeHint {
   0% { transform: translateX(0); opacity: 0.7; }
   25% { transform: translateX(-20px); opacity: 1; }
@@ -511,7 +503,6 @@
   100% { transform: translateX(0); opacity: 0.7; }
 }
 
-/* Media Queries */
 @media (max-width: 1200px) {
   .gallery-preview {
     grid-template-columns: repeat(4, 1fr);
@@ -571,7 +562,6 @@
     font-size: 2rem;
   }
 
-  /* Adjust fixed heights for smaller screens */
   .release-carousel {
     height: 600px;
   }
@@ -591,17 +581,14 @@
 }
 
 @media (max-width: 768px) {
-  /* Hide carousel navigation buttons on mobile */
   .carousel-button {
     display: none;
   }
   
-  /* Make carousel take full width when buttons are hidden */
   .release-carousel {
     width: 100%;
   }
   
-  /* Change cursor on active swipe */
   .release-carousel:active {
     cursor: grabbing;
   }
@@ -652,11 +639,11 @@
     align-items: center;
     text-align: center;
     padding: 1.5rem;
-    height: 600px; /* Increased for mobile layout */
+    height: 600px;
   }
   
   .release-carousel {
-    height: 640px; /* Adjust container height for mobile */
+    height: 640px;
   }
   
   .release-image {
@@ -667,10 +654,9 @@
   
   .release-info {
     text-align: center;
-    width: 100%; /* Full width on mobile */
+    width: 100%;
   }
 
-  /* Adjust container heights for mobile */
   .release-title-container {
     height: 80px;
     min-height: 80px;
@@ -701,7 +687,7 @@
     flex-direction: column;
     text-align: center;
     padding: 1.5rem;
-    min-height: 180px; /* Adjust height for mobile */
+    min-height: 180px;
   }
   
   .tour-date {
@@ -752,7 +738,6 @@
     margin-bottom: 1rem;
   }
   
-  /* Additional refinements for the button on smallest screens */
   .hero-buttons {
     display: inline-flex;
     width: auto;
@@ -788,11 +773,11 @@
   }
   
   .release-carousel {
-    height: 580px; /* Adjusted for smallest screens */
+    height: 580px;
   }
   
   .release-card {
-    height: 540px; /* Adjusted for smallest screens */
+    height: 540px;
   }
   
   .release-image {
@@ -813,8 +798,8 @@
   }
   
   .gallery-preview {
-    grid-template-columns: minmax(auto, 300px); /* Set a maximum width for the column */
-    justify-content: center; /* Center the grid column */
+    grid-template-columns: minmax(auto, 300px);
+    justify-content: center;
     gap: 1rem;
     width: 100%;
     max-width: 100%;
@@ -823,7 +808,7 @@
   }
   
   .gallery-item {
-    width: 100%; /* Ensure items take full width of their container */
+    width: 100%;
   }
   
   .tour-date {
