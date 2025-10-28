@@ -27,7 +27,7 @@ const MerchPage = ({ merchandise }) => {
             <div className="merch-details">
               <h3>{item.name}</h3>
               <p className="merch-price">{item.price}</p>
-              <a href={item.link} className="buy-button">Buy Now</a>
+              <a href={item.link} target="_blank" className="buy-button">Buy Now</a>
             </div>
           </motion.div>
         ))}

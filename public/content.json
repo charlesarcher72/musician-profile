@@ -160,7 +160,6 @@
     { "icon": "faApple", "url": "https://music.apple.com/us/artist/chuck-savage/1554962919" },
     { "icon": "faSpotify", "url": "https://open.spotify.com/artist/1RiM4nQULgXpc73vrayzDa?si=F6OPetEHToiRu2omuZujZg" }
   ],
-
   "gallery": [
     {
       "id": 1,
@@ -281,6 +280,121 @@
     {
       "id": 30,
       "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/gallery/30.jpg"
+    }
+  ],
+  "merchandise" : [
+    {
+      "id": 1,
+      "name": "Logo T-Shirt",
+      "price": "$29.80",
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/merch/logo_tshirt.jpg",
+      "link": "https://www.redbubble.com/i/t-shirt/Chuck-Savage-Logo-by-csavagejamz/175305365.6VDG0?asc=u"
+    },
+    {
+      "id": 2,
+      "name": "Logo Hat",
+      "price": "$23.09",
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/merch/logo_hat.jpg",
+      "link": "https://www.redbubble.com/i/hat/Chuck-Savage-Logo-by-csavagejamz/175305365.9AAXL?asc=u"
+
+    },
+    {
+      "id": 3,
+      "name": "Logo Sticker",
+      "price": "$2.74",
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/merch/logo_sticker.jpg",
+      "link": "https://www.redbubble.com/i/sticker/Chuck-Savage-Logo-by-csavagejamz/175305365.EJUG5?asc=u"
+    },
+    {
+      "id": 4,
+      "name": "Logo Pin",
+      "price": "$3.37",
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/merch/logo_pin.jpg",
+      "link": "https://www.redbubble.com/i/pin/Chuck-Savage-Logo-by-csavagejamz/175305365.NP9QY?asc=u"
+    },
+    {
+      "id": 5,
+      "name": "Cinema T-Shirt",
+      "price": "$29.80",
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/merch/cinema_tshirt.jpg",
+      "link": "https://www.redbubble.com/i/t-shirt/The-Cinema-is-a-Place-for-People-from-All-Walks-of-LIfe-by-csavagejamz/175305582.6VDG0?asc=u"
+    },
+    {
+      "id": 6,
+      "name": "Cinema Sticker",
+      "price": "$2.74",
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/merch/cinema_sticker.jpg",
+      "link": "https://www.redbubble.com/i/sticker/The-Cinema-is-a-Place-for-People-from-All-Walks-of-LIfe-by-csavagejamz/175305582.EJUG5?asc=u"
+    },
+    {
+      "id": 7,
+      "name": "Weird Annoying Guy T-Shirt",
+      "price": "$29.80",
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/merch/weird_annoying_guy_tshrt.jpg",
+      "link": "https://www.redbubble.com/i/t-shirt/Weird-Annoying-Guy-by-csavagejamz/175305899.D681C?asc=u"
+    },
+    {
+      "id": 8,
+      "name": "Weird Annoying Guy Hoodie",
+      "price": "$63.25",
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/merch/weird_annoying_guy_hoodie.jpg",
+      "link": "https://www.redbubble.com/i/hoodie/Weird-Annoying-Guy-by-csavagejamz/175305899.6N9P2?asc=u"
+    },
+    {
+    "id": 9,
+      "name": "Weird Annoying Guy Sweatshirt",
+      "price": "$56.84",
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/merch/weird_annoying_guy_sweatshirt.jpg",
+      "link": "https://www.redbubble.com/i/sweatshirt/Weird-Annoying-Guy-by-csavagejamz/175305899.0C5ES?asc=u"
+    },
+    {
+      "id": 10,
+      "name": "Weird Annoying Guy Hat",
+      "price": "$23.09",
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/merch/weird_annoying_guy_hat.jpg",
+      "link": "https://www.redbubble.com/i/hat/Weird-Annoying-Guy-by-csavagejamz/175305899.NJ288?asc=u"
+    },
+    {
+      "id": 11,
+      "name": "Weird Annoying Guy Sticker",
+      "price": "$2.74",
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/merch/weird_annoying_guy_sticker.jpg",
+      "link": "https://www.redbubble.com/i/sticker/Weird-Annoying-Guy-by-csavagejamz/175305899.EJUG5?asc=u"
+    },
+    {
+      "id": 12,
+      "name": "Scary Guy T-Shirt",
+      "price": "$29.80",
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/merch/scary_guy_tshirt.jpg",
+      "link": "https://www.redbubble.com/i/t-shirt/Scary-Guy-by-csavagejamz/175306101.D681C?asc=u"
+    },
+    {
+      "id": 13,
+      "name": "Scary Guy Hoodie",
+      "price": "$63.25",
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/merch/scary_guy_hoodie.jpg",
+      "link": "https://www.redbubble.com/i/hoodie/Scary-Guy-by-csavagejamz/175306101.6N9P2?asc=u"
+    },
+    {
+      "id": 14,
+      "name": "Scary Guy Sweatshirt",
+      "price": "$56.84",
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/merch/scary_guy_sweatshirt.jpg",
+      "link": "https://www.redbubble.com/i/sweatshirt/Scary-Guy-by-csavagejamz/175306101.0C5ES?asc=u"
+    },
+    {
+      "id": 15,
+      "name": "Ground Chuck T-Shirt",
+      "price": "$31.27",
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/merch/ground_chuck_tshirt.jpg",
+      "link": "https://www.redbubble.com/i/t-shirt/Ground-Chuck-by-csavagejamz/175306205.1YYVU?asc=u"
+    },
+    {
+      "id": 16,
+      "name": "Ground Chuck Sticker",
+      "price": "$2.74",
+      "imgSrc": "https://chuck-savage-musician-profile.s3.us-east-1.amazonaws.com/merch/ground_chuck_sticker.jpg",
+      "link": "https://www.redbubble.com/i/sticker/Ground-Chuck-by-csavagejamz/175306205.EJUG5?asc=u"
     }
   ]
 }
