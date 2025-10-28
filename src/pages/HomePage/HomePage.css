@@ -102,6 +102,7 @@
   margin: 2rem 0;
   width: 100%;
   max-width: 1200px;
+  position: relative;
 }
 
 .carousel-button {
@@ -116,6 +117,7 @@
   border-radius: 50%;
   background-color: var(--bg-tertiary);
   flex-shrink: 0;
+  z-index: 10;
 }
 
 .carousel-button:hover {
@@ -128,7 +130,6 @@
   overflow: hidden;
   position: relative;
   height: 400px;
-  touch-action: pan-x;
 }
 
 .release-card {
@@ -581,16 +582,37 @@
 }
 
 @media (max-width: 768px) {
+  .carousel-container {
+    position: relative;
+  }
+  
   .carousel-button {
-    display: none;
+    position: absolute;
+    top: 120px;
+    z-index: 10;
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    width: 35px;
+    height: 35px;
+    font-size: 1.5rem;
+  }
+  
+  .carousel-button:hover {
+    background-color: var(--accent-primary);
+    color: var(--button-text);
+    transform: scale(1.05);
+  }
+  
+  .carousel-button.prev {
+    left: 10px;
+  }
+  
+  .carousel-button.next {
+    right: 10px;
   }
   
   .release-carousel {
     width: 100%;
-  }
-  
-  .release-carousel:active {
-    cursor: grabbing;
   }
   
   .hero-content {
@@ -770,6 +792,25 @@
   .artist-bio {
     font-size: 0.95rem;
     margin-bottom: 1.2rem;
+  }
+  
+  .carousel-button {
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+    top: 90px;
+  }
+  
+  .carousel-button:hover {
+    transform: scale(1.05);
+  }
+  
+  .carousel-button.prev {
+    left: 5px;
+  }
+  
+  .carousel-button.next {
+    right: 5px;
   }
   
   .release-carousel {

@@ -10,9 +10,6 @@ import './HomePage.css';
 const HomePage = ({ artistData, audioPlayer }) => {
   const [currentContentIndex, setCurrentContentIndex] = useState(0);
   const [displayedGalleryItems, setDisplayedGalleryItems] = useState([]);
-  const [touchStart, setTouchStart] = useState(null);
-  const [touchEnd, setTouchEnd] = useState(null);
-  const minSwipeDistance = 50;
   const carouselRef = useRef(null);
   
   const getGalleryItems = (startIndex, count = 4) => {
@@ -69,33 +66,6 @@ const HomePage = ({ artistData, audioPlayer }) => {
     );
   };
   
-  const onTouchStart = (e) => {
-    setTouchEnd(null);
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-  
-  const onTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-  
-  const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
-    
-    const distance = touchStart - touchEnd;
-    const isSwipe = Math.abs(distance) > minSwipeDistance;
-    
-    if (isSwipe) {
-      if (distance > 0) {
-        nextContent();
-      } else {
-        prevContent();
-      }
-    }
-    
-    setTouchStart(null);
-    setTouchEnd(null);
-  };
-  
   const handleIndicatorClick = (index) => {
     setCurrentContentIndex(index);
   };
@@ -142,9 +112,6 @@ const HomePage = ({ artistData, audioPlayer }) => {
           <div 
             className="release-carousel"
             ref={carouselRef}
-            onTouchStart={onTouchStart}
-            onTouchMove={onTouchMove}
-            onTouchEnd={onTouchEnd}
           >
             <div className="release-card">
               <div className="release-image">
@@ -200,7 +167,6 @@ const HomePage = ({ artistData, audioPlayer }) => {
         </div>
       </section>
       
-      {/* Only render Upcoming Shows section if there are tour dates */}
       {artistData.tourDates && artistData.tourDates.length > 0 && (
         <section className="upcoming-shows-section">
           <h2>Upcoming Shows</h2>
