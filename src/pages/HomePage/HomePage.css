@@ -604,11 +604,11 @@
   }
   
   .carousel-button.prev {
-    left: 10px;
+    left: 30px;
   }
   
   .carousel-button.next {
-    right: 10px;
+    right: 30px;
   }
   
   .release-carousel {
@@ -806,11 +806,11 @@
   }
   
   .carousel-button.prev {
-    left: 5px;
+    left: 30px;
   }
   
   .carousel-button.next {
-    right: 5px;
+    right: 30px;
   }
   
   .release-carousel {
